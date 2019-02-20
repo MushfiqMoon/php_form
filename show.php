@@ -13,31 +13,20 @@
 
 if(isset($_POST['submit'])){
 
-    $minimum = 3;
-    $maximum = 10;
-
-    // echo "wow";
     $userName = $_POST['user'];
-
-    $userlingth = strlen($userName);
     $password = $_POST['pass'];
 
-    // echo "your user name is ".$userName;
-    // echo "<br>" ;
-    // echo "your password is ".$password;
+    if($userName && $password){
 
-    if(($userlingth>$minimum) && ($userlingth<$maximum)){
-        echo "your user name is ".$userName;
-        echo "<br>" ;
-        echo "your password is ".$password; 
-        echo "<br>";
-        echo "<br>";
-        echo "<br>";
-        echo $userlingth;  
-    }else{      
-        echo "user name will be in 4 to 10 charecter";
-        echo "<br>";
-        echo $userlingth;
+        // Create connection
+        $connection = new mysqli("localhost", "root", "", "php_user");
+
+        if ($connection) {
+            echo "we are connected";
+        } else{
+            die ("Connection failed");
+        }
+
     }
 
 };  
