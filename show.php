@@ -13,22 +13,29 @@
 
 if(isset($_POST['submit'])){
 
-    $userName = $_POST['user'];
-    $password = $_POST['pass'];
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
 
-    if($userName && $password){
+    if($user && $pass){
 
         // Create connection
         $connection = new mysqli("localhost", "root", "", "php_user");
 
         if ($connection) {
-            echo "we are connected";
+            echo "we are connected ";
         } else{
             die ("Connection failed");
-        }
+        }    
 
+            $query = "INSERT INTO user_app (username, password) 
+                      VALUES ('$user', '$pass')";
+
+            $result = mysqli_query($connection, $query);
+
+            if(!$result){
+                die ("Connection failed databse");
+            }
     }
-
 };  
 
 ?>
