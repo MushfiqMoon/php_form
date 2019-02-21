@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,10 +13,10 @@
 
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
+            <a href="index.php" class="brand-logo">Logo</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <!-- <li><a href="sass.html">Sass</a></li> -->
-                <li><a href="update.php">Update</a></li>
+                <!-- <li><a href="update.php">Components</a></li> -->
                 <li><a href="collapsible.html">ADMIN</a></li>
             </ul>
         </div>
@@ -30,11 +31,11 @@
                     <div class="row">
                         <div class="col s12">
                             <div class="card-title center-align">
-                                <h5>This should be vertically aligned</h5>
+                                <h5>Update your Username and Password</h5>
                             </div>
                         </div>
                     </div>
-                    <form action="function.php" method="POST">
+                    <form action="" method="POST">
                         <div class="row">
                             <div class="col s12">
                                 <div class="row">
@@ -58,7 +59,18 @@
 
                         <div class="row">
                             <div class="col s12">
-                                <button class="btn waves-effect waves-light" type="submit" name="submit">Submit     
+                                <select class="browser-default">
+                                    <option value="" disabled selected>Choose your ID</option>
+                                    <option value="1">ID 1</option>
+                                    <option value="2">ID 2</option>
+                                    <option value="3">ID 3</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12">
+                                <button class="btn waves-effect waves-light" type="submit" name="update">Update     
                                 </button>
                             </div>
                         </div>

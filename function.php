@@ -1,18 +1,16 @@
 <?php include "db.php" ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Res</title>
-</head>
-<body>
-    <h1>Thank you for submitting the form</h1>
+
+<a href="index.php">go back</a>    
+<br>
+
 
 
 <?php
+
+
+// CREATE
+// ---------------------
 
     if(isset($_POST['submit'])){
 
@@ -29,14 +27,24 @@
                 if(!$result){
                     die ("Connection failed databse");
                 }
+
+                echo '<center><h1>Thank you for submitting the form</h1></center>';
+        }else{
+                echo "<center><h1>Please enter username and password</h1></center>";
         }
     };  
 
+
+
+// UPDATE
+// ---------------------
+
+
+
+
+
 ?>
 
-<br>
-    <a href="index.php">now, go back</a>
 
 
-</body>
-</html>
+
