@@ -11,23 +11,29 @@
 <body>
     <h1>Thank you for submitting the form</h1>
 
-    <?php
 
-if(isset($_POST['submit'])){
+<?php
 
-    $userName = $_POST['user'];
-    $password = $_POST['pass'];
+    if(isset($_POST['submit'])){
 
-    if($userName && $password){
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
 
-        // Create connection
-        $connection = new mysqli("localhost", "root", "", "php_user");
+        if($user && $pass){
 
-    }
+                $query = "INSERT INTO user_app (username, password) 
+                        VALUES ('$user', '$pass')";
 
-};  
+                $result = mysqli_query($connection, $query);
+
+                if(!$result){
+                    die ("Connection failed databse");
+                }
+        }
+    };  
 
 ?>
+
 <br>
     <a href="index.php">now, go back</a>
 
