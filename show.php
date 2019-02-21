@@ -1,3 +1,5 @@
+<?php include "db.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +22,6 @@ if(isset($_POST['submit'])){
 
         // Create connection
         $connection = new mysqli("localhost", "root", "", "php_user");
-
-        if ($connection) {
-            echo "we are connected";
-        } else{
-            die ("Connection failed");
-        }
 
     }
 
