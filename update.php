@@ -1,3 +1,5 @@
+<?php include "db.php" ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -35,7 +37,7 @@
                             </div>
                         </div>
                     </div>
-                    <form action="" method="POST">
+                    <form action="function.php" method="POST">
                         <div class="row">
                             <div class="col s12">
                                 <div class="row">
@@ -59,11 +61,23 @@
 
                         <div class="row">
                             <div class="col s12">
-                                <select class="browser-default">
+                                <select name="id" class="browser-default">
                                     <option value="" disabled selected>Choose your ID</option>
-                                    <option value="1">ID 1</option>
-                                    <option value="2">ID 2</option>
-                                    <option value="3">ID 3</option>
+                                    <!-- <option value="1">ID 1</option> -->
+
+                                    <?php
+
+                                        $query = "SELECT * FROM user_app";
+                                        $result = mysqli_query($connection, $query);
+                                        
+                                        while($row = mysqli_fetch_assoc($result)){
+
+                                            $id = $row[id];
+
+                                            echo "<option value='$id'>$id</option>";
+                                        }
+
+                                    ?>
                                 </select>
                             </div>
                         </div>
