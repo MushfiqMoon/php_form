@@ -1,4 +1,5 @@
-<?php include "db.php" ?>
+
+<?php include "./function.php" ?>
 
 <!DOCTYPE html>
 
@@ -67,15 +68,7 @@
 
                                     <?php
 
-                                        $query = "SELECT * FROM user_app";
-                                        $result = mysqli_query($connection, $query);
-                                        
-                                        while($row = mysqli_fetch_assoc($result)){
-
-                                            $id = $row[id];
-
-                                            echo "<option value='$id'>$id</option>";
-                                        }
+                                        showUpdateData()
 
                                     ?>
                                 </select>
